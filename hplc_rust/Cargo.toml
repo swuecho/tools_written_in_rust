@@ -1,0 +1,11 @@
+[package]
+
+name = "HPLC data extract"
+version = "0.0.1"
+authors = [ "Hao Wu <echowuhao@gmail.com>" ]
+
+[[bin]]
+
+name = "extractor"
+
+[dependencies]
