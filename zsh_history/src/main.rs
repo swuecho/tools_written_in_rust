@@ -3,8 +3,10 @@ use std::io::prelude::*;
 use std::fs::File;
 use std::io::BufReader;
 use std::collections::HashMap;
+use std::env;
 fn main() {
-    let path = "/home/hwu/.zsh_history";
+
+    let path = env::home_dir().unwrap().join(".zsh_history");
     let reader = BufReader::new(File::open(path).unwrap());
     // get the type of lines?
     let mut data_map = HashMap::new();
