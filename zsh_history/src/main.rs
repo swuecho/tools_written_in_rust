@@ -1,3 +1,6 @@
+#![feature(plugin)]
+
+#![plugin(clippy)]
 extern crate time;
 
 use std::env;
@@ -15,7 +18,7 @@ fn main() {
     let current_time_unix = time::get_time().sec as i32;
     for line in reader.lines() {
         if let Ok(line_content) = line {
-            let time_and_cmd: Vec<&str> = line_content.split(":").collect(); //.unwrap().map(to_string); //map(ToOwned::to_owned);
+            let time_and_cmd: Vec<&str> = line_content.split(':').collect(); //.unwrap().map(to_string); //map(ToOwned::to_owned);
             if time_and_cmd.len() > 2 {
                 let time = time_and_cmd[1];
                 let cmd = time_and_cmd[2];
@@ -30,7 +33,7 @@ fn main() {
             }
         }
     }
-    for (cmd, &times) in data_map.iter() {
+    for (cmd, &times) in &data_map {
         println!("{}: {}", cmd, times);
     }
 }

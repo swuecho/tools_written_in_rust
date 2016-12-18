@@ -5,3 +5,4 @@ authors = ["Hao Wu <echowuhao@gmail.com>"]
 
 [dependencies]
 time='*'
+clippy='*'
