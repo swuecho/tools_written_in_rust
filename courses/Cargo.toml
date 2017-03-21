@@ -1,0 +1,8 @@
+[package]
+name = "courses"
+version = "0.1.0"
+authors = ["Hao Wu <echowuhao@gmail.com>"]
+
+[dependencies]
+csv = "0.15"
+rustc-serialize= "*"
