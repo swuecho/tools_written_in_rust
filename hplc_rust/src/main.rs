@@ -1,3 +1,4 @@
+use std::env;
 use std::io::prelude::*;
 use std::path::Path;
 use std::fs::File;
@@ -5,8 +6,12 @@ use std::io::BufReader;
 use std::collections::HashMap;
 use std::fs::read_dir;
 fn main() {
+    // We assume that we are in a valid directory.
+    let path = env::current_dir().unwrap();
+
+    println!("The current directory is {}", path.display());
     // Read the contents of a directory, returns `io::Result<Vec<Path>>`
-    match read_dir(&Path::new("../data")) {
+    match read_dir(&Path::new("./data")) {
         Err(why) => println!("! read dir {:?}", why.kind()),
         Ok(paths) => {
             for path in paths {

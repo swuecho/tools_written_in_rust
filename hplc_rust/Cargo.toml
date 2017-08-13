@@ -6,6 +6,6 @@ authors = [ "Hao Wu <echowuhao@gmail.com>" ]
 
 [[bin]]
 
-name = "extractor"
+name = "main"
 
 [dependencies]
