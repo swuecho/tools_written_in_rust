@@ -6,8 +6,8 @@ use std::collections::HashMap;
 use std::fs::read_dir;
 fn main() {
     // Read the contents of a directory, returns `io::Result<Vec<Path>>`
-    match read_dir(&Path::new("./data")) {
-        Err(why) => println!("! {:?}", why.kind()),
+    match read_dir(&Path::new("../data")) {
+        Err(why) => println!("! read dir {:?}", why.kind()),
         Ok(paths) => {
             for path in paths {
                 let (name, data) = extract_data_from_file(path.unwrap().path().as_path());

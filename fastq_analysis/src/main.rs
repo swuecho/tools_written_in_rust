@@ -11,7 +11,7 @@ fn filter_records(in_file: &str, out_file: &str) {
     let mut rng = thread_rng();
     for result in reader.records() {
         let record = result.unwrap();
-        println!("{}", &record.seq());
+        println!("{:?}", &record.seq());
         if rng.gen() {
             writer.write_record(&record).unwrap();
         }
